@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //* Write a function that checks to see if a number is a prime number or not. Have it return `true` if it is, or `false` if it isn't.
+        //* A Prime number is a number greater than one that can only be divided by one and itself.
+        //* [More info on Prime numbers](https://www.mathsisfun.com/prime_numbers.html)
+        //https://www.w3resource.com/javascript-exercises/javascript-function-exercise-8.php
+        
+        function test_prime(n)
+                {
+
+                if (n===1)
+                {
+                    return false;
+                }
+                else if(n === 2)
+                {
+                    return true;
+                }else
+                {
+                    for(var i = 2; x < n; i++) //start at  2 because 1 will go into all the numbers, don't include = in the evaluation, or you'll include the final number which shouldn't be evaluated
+                    {
+
+                    if(n % i === 0)
+                    {
+                        return false;
+                    }
+                    }
+                    return true;  
+                }
+                }
+
+            console.log(test_prime(37));
+
+        
+
+        </script>
+</body>
+</html>

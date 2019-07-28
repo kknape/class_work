@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        var audio= new Audio("raven.mp3");
+
+        setTimeout(fiveSeconds, 1000 * 5);
+        setTimeout(tenSeconds, 1000 *10);
+        setTimeot(timeUp, 1000 *15);
+      
+      
+      function fiveSeconds(){
+
+        $("#time-left").append("<h2>About 5 seconds left!</h2>");
+        console.log("About 5 seconds left!");
+        }
+    
+        function tenSeconds(){
+        $("#time-left").append("<h2>About 10 seconds left!</h2>");
+        console.log("About 10 seconds left!");
+        }
+        function fifteenSeconds(){
+        $("#time-left").append("<h2>Times Up!</h2>");
+        console.log("About 10 seconds left!");
+        playAudio();
+        }
+
+        //intervals, will execute every 1 second until you tell it to stop
+     //   setInterval(function, 1000);
+
+        //to stop it - use clearInterval, pass the variable you want to stop
+      //  function stop() {
+     //       clearInterval(intervalId);
+     //   }
+
+    </script>
+</body>
+</html>

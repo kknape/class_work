@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Array Activity #2 Favorite Bands</title>
+  </head>
+  <body>
+
+    <script>
+
+      // array of my favorite bands
+      var myBands = ["the beatles", "fleetwood mac", "aerosmith", "white snake", "oingo-boingo"];
+
+      // Prompt, what's your favorite band
+      var userGuess = prompt("What is your favorite band?");
+
+//var yourFavBandLower = yourFavBand.toLowerCase();
+      // Converts the user's answer to lowercase.
+      var userGuessLower = userGuess.toLowerCase();
+
+
+    if (myBands.indexOf(userGuessLower) === -1) {
+        alert("Nah. They're pretty lame.");
+    }
+        else {
+            alert("OMG! I love them too!");
+        }
+
+    </script>
+
+  </body>
+</html>

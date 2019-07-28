@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var title = "news"; // + can also be written as %2B 
+    var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
+
+    $.ajax({
+      url: queryURL, //variable created above with the url, url is a required key, you could also put the string value here and it would work rather than putting it in a variable
+      method: "GET" //property key is "method", defined method of GET, retrieves information, other examples are POST. Don't think it's required, default method is GET...maybe
+    }).then(function(response) { //.then says "I will wait for you to give me a response"
+      console.log(response); //prints out all of the information we get back
+      console.log(response.Title); //prints just the title
+      console.log(response.Runtime); //prints out just the runtime parameter
+    });
+    // ---------------------------------------------------------
+
+    console.log("This console.log will probably happen first because of asynchronicity.");
+    var x = 2;
+    var y = 10;
+    var z = 13;
+    console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
+
+
+    /*
+      -The queryURL which points to the JSON
+      -The GET method which tells JavaScript to download the JSON
+      -The then function which tells JavaScript to run the code inside ONLY when done with the     download
+      -Most importantly that all of the data is being stored in the response object
+      -Lastly, in your Chrome inspector, all the code past line 26 happens before the results of   our API call are logged. Even though that happens first lexically.
+    */
+  </script>
+
+</body>
+
+</html>

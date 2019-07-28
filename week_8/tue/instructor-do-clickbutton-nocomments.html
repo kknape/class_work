@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Click Button with Firebase!</title>
+</head>
+<body>
+  <!-- -->
+  <h1>Ouch! You've clicked me
+    <span id="click-value"></span> times!</h1>
+
+  <!-- -->
+  <button id="click-button">Click Me!!!!</button>
+
+  <!-- -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!--  -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+
+  <!-- -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+  <!-- ================================================================================== -->
+  <script>
+
+//info from firebase after you create a db
+    var config = {
+          apiKey: "AIzaSyAYfH6pZXAzm5klNDj_Xy-nkky_DN50-ho",
+          authDomain: "counter-click-1c4c9.firebaseapp.com",
+          databaseURL: "https://counter-click-1c4c9.firebaseio.com",
+          projectId: "counter-click-1c4c9",
+          storageBucket: "counter-click-1c4c9.appspot.com",
+          messagingSenderId: "374800152238",
+          appId: "1:374800152238:web:cfc7c2392acc791b"
+    };
+
+//first thing is to call is the initializeApp
+    firebase.initializeApp(config);
+
+    // VARIABLES
+    // --------------------------------------------------------------------------------
+//Required - set database
+    var database = firebase.database();
+    var clickCounter = 0;
+
+    // FUNCTIONS + EVENTS
+    // --------------------------------------------------------------------------------
+
+    $("#click-button").on("click", function() {
+      clickCounter++;
+//ref can be used to point to a specific folder in your database, we're just working at the root level for now
+//you can add a string in the () and it will create a folder on the fly 
+        database.ref().set({
+        clickCount: clickCounter //this is actually writing to our database = we're passing in an object with one name
+
+      });
+    });
+
+    // MAIN PROCESS + INITIAL CODE
+    // --------------------------------------------------------------------------------
+//the 'on value' think of it like an event listner, allows you to see the latest data
+    database.ref().on("value", function(snapshot) {
+      console.log(snapshot.val());
+
+      clickCounter = snapshot.val().clickCount; //saves the data in the "snapshot"
+
+      $("#click-value").text(snapshot.val().clickCount);
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+
+  </script>
+
+</body>
+
+</html>

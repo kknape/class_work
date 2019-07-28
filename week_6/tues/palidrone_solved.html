@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Content!</title>
+<body>
+
+  <script type="text/javascript">
+
+
+    var isPalindrome = function (str) 
+    {
+      // Get the index of the last letter
+      var end = str.length-1;
+
+      for (var start = 0; start < str.length; start++, end--) 
+      {
+          // If start letter doesn't equal end letter then this is
+          // NOT a palidrome
+          if (str[start] !== str[end])
+          {
+              return false;
+          }
+      }
+      
+      // if the logic above can't prove that its NOT a palidrome
+      // then return true, because it is a palidrome
+	    return true;
+    }
+
+    console.log(isPalindrome("noon"));
+    console.log(isPalindrome("horse"));
+    console.log(isPalindrome("racecar"));
+  </script>
+
+</body>
+</html>

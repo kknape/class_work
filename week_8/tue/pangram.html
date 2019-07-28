@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pangram</title>
+<body>
+
+  <script type="text/javascript">
+
+    var isPangram = function (str) {
+      str = str.toLowerCase(); //normalize the string
+      var alphabet = "abcdefghijklmnopqrstuvwxyz";
+      for (var i = 0; i < alphabet.length; i++) {
+        if (!str.includes(alphabet[i])){ //if this is false-does not include, return false, the "!" is "not"
+          return false;
+        }
+      }
+      return true;
+    }
+
+    console.log(isPangram("Watch Jeopardy, Alex Trebek’s fun TV quiz game"));
+    console.log(isPangram("Five hexing wizard bots jump quickly"));
+    console.log(isPangram("JavaScript is the best"));
+  </script>
+
+</body>
+</html>

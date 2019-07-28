@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+//Write a function that takes in a single word as a string and returns true if it’s a palindrome and false otherwise (a palindrome is spelled the same way forwards and backwards).
+// Ex:
+//Input: "noon"
+//Output: true
+
+//Input: "horse"
+//Output: false
+
+//Input: "racecar"
+//Output: true
+
+//Scan each letter. 
+//Check to see if first and last letter are equal-- if they are continue until false
+//Continue to compare each first/last letter
+//method of "length" will get the size of the string
+//"noon".charAt(0) //will give you the first letter
+//"noon"[0] //will give you string in an array
+////"noon".length-1 //will point to the last of any array, in this case the last letter of the string
+//as we compare each letter we're adding a counter at the front and back so we can step in and evaluate each character in the string
+
+//if (frontLetter!=backLetter) 
+//not a palidrome -- default will be True if this statement is False, 
+//we don't have to add any logic to establish True
+// when this IF statement is false
+var isPalidrome = function (str) {
+    var str = "noon";
+    var end=str.length-1;
+
+    for (var begin=0; begin<str.length; begin++, end--) {
+        if (str[begin] !== str[end])
+        {return false;
+        }
+    }
+   return true;
+}
+console.log(isPalidrome("noon"));
+console.log(isPalidrome("horse"));
+console.log(isPalidrome("racecar"));
+
+
+</script>
+
+
+</body>
+</html>

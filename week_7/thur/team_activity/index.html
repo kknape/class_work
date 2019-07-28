@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New York Times Search</title>
+
+<!-- Bootstrap CSS CDN  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+<!-- Font Awesome CSS Icons (For cool glyphicons) -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+<!--my css-->  
+<link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+<body>
+    <div class="container">
+      <!--title header-->
+      <div class="jumbotron">
+        <h1 class="display-4">New York Times Search</h1>
+      </div>
+
+      <div classs="row">
+          <div class="card">
+              <div class="card-header">
+                Search Parameters
+              </div>
+                  <form>
+                      <div class="form-group">
+                        <label for="searchTerm">Search Term: </label>
+                        <input type="text" class="form-control" id="searchTermTxt" aria-describedby="searchT" placeholder="Enter a search term.">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Number of Records to Retrieve:</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option value=1>1</option>
+                            <option value=5 selected>5</option>
+                            <option value=10>10</option>
+                          </select>
+                        </div>
+                      
+                        <div class="form-group">
+                            <label for="searchTerm">Start Year (Optional): </label>
+                            <input type="text" class="form-control" id="searchStYr" aria-describedby="searchSY" placeholder="Enter the start year of your query.">
+                        </div>  
+
+                        <div class="form-group">
+                            <label for="searchTerm">End Year (Optional): </label>
+                            <input type="text" class="form-control" id="searchEnYr" aria-describedby="searchEY" placeholder="Enter the end year of your query.">
+                        </div>  
+
+                      <button type="submit" class="btn btn-primary" id="searchBtn">Search</button>
+                      <button type="clear" class="btn btn-primary">Clear Results</button>
+                    </form>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              Search Results
+            </div>
+
+            <div class="card-body">
+                <div class="card">
+                  <div class="card-body">
+                    <h2>Title</h2>
+                    <h3>Author</h3>
+                    <h4>Section:</h4>
+                    <h4>Date</h4>
+                    <h4>Link</h4>
+                </div>
+            </div>
+            </div>
+
+            <div class="card-body">
+                <div class="card">
+                  <div class="card-body">
+                    <h2>Title</h2>
+                    <h3>Author</h3>
+                    <h4>Section:</h4>
+                    <h4>Date</h4>
+                    <h4>Link</h4>
+                </div>
+            </div>
+            </div>
+
+            <div class="card-body">
+                <div class="card">
+                  <div class="card-body">
+                    <h2>Title</h2>
+                    <h3>Author</h3>
+                    <h4>Section:</h4>
+                    <h4>Date</h4>
+                    <h4>Link</h4>
+                </div>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    <!--container end-->     
+    </div>
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+ 
+  <!--My javascript-->
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>

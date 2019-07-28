@@ -1,0 +1,18 @@
+<!--Without running the code, determine what the following code will output and why:
+NaN
+
+var a = 1;
+
+function outer(){
+    var a = 2;
+                function inner(){
+                                    //in essence it's adding var a; here but w/o value...so adding 1 results in NaN
+                    a++;
+                        console.log(a);
+                    var a = 5; //var a in this spot, gets pulled into the inner function the "=5" doesn't get read until this line
+                }                  //always declare your variables at the beginning of your function
+    inner();
+}
+outer();
+
+-->
